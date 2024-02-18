@@ -5,13 +5,13 @@ export const Statistics = ({
   positivePercentage,
 }) => {
   return (
-    <>
+    <table>
       {props.map((category) => (
-        <div key={category.name}>{`${category.name} ${category.prop}`}</div>
+        <tr key={category.name}>{`${category.name} ${category.state}`}</tr>
       ))}
-      <div>all {totalVotes}</div>
-      <div>average {averageScore}</div>
-      <div>positive {positivePercentage} %</div>
-    </>
+      <tr>all {totalVotes}</tr>
+      <tr>average {averageScore}</tr>
+      <tr>positive {positivePercentage} %</tr>
+    </table>
   );
 };

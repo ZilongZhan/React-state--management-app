@@ -7,15 +7,15 @@ const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
-
+  
+  const propsCollection = [
+    { name: "good", state: good, setter: setGood },
+    { name: "neutral", state: neutral, setter: setNeutral },
+    { name: "bad", state: bad, setter: setBad },
+  ];
+  
   const heading1 = "give feedback";
   const heading2 = "statistics";
-
-  const propsCollection = [
-    { name: "good", prop: good, setter: setGood },
-    { name: "neutral", prop: neutral, setter: setNeutral },
-    { name: "bad", prop: bad, setter: setBad },
-  ];
 
   const totalVotes = good + neutral + bad;
   const average = (good * 1 + bad * -1) / totalVotes;
