@@ -1,10 +1,10 @@
-export const Buttons = ({ categories, setters, voteCounter }) => {
+export const Buttons = ({ props, voteCounter }) => {
   return (
     <>
-      {categories.map((button, index) => {
+      {props.map((button) => {
         return (
-          <button key={button} onClick={() => voteCounter(setters[index])}>
-            {button}
+          <button key={button.name} onClick={() => voteCounter(button.setter)}>
+            {button.name}
           </button>
         );
       })}

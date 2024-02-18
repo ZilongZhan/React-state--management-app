@@ -10,8 +10,13 @@ const App = () => {
 
   const heading1 = "give feedback";
   const heading2 = "statistics";
-  const categoryProps = [good, neutral, bad];
-  const categorySetters = [setGood, setNeutral, setBad];
+
+  const propsCollection = [
+    { name: "good", prop: good, setter: setGood },
+    { name: "neutral", prop: neutral, setter: setNeutral },
+    { name: "bad", prop: bad, setter: setBad },
+  ];
+
   const totalVotes = good + neutral + bad;
   const average = (good * 1 + bad * -1) / totalVotes;
   const positive = good / totalVotes;
@@ -24,14 +29,12 @@ const App = () => {
     <div>
       <Header heading={heading1} />
       <Buttons
-        categories={["good", "neutral", "bad"]}
-        setters={categorySetters}
+        props={propsCollection}
         voteCounter={voteCounter}
       />
       <Header heading={heading2} />
       <Statistics
-        categories={categoryProps}
-        names={["good", "neutral", "bad", "all"]}
+        props={propsCollection}
         totalVotes={totalVotes}
         averageScore={average}
         positivePercentage={positive}

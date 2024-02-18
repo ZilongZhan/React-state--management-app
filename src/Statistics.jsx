@@ -1,14 +1,13 @@
 export const Statistics = ({
-  categories,
-  names,
+  props,
   totalVotes,
   averageScore,
   positivePercentage,
 }) => {
   return (
     <>
-      {categories.map((category, index) => (
-        <div key={index}>{`${names[index]} ${category}`}</div>
+      {props.map((category) => (
+        <div key={category.name}>{`${category.name} ${category.prop}`}</div>
       ))}
       <div>all {totalVotes}</div>
       <div>average {averageScore}</div>
