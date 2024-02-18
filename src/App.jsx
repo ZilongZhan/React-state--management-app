@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Header } from "./Header";
-import { Button } from "./Button";
-import { Statistic } from "./Statistic";
+import { Buttons } from "./Buttons";
+import { Statistics } from "./Statistics";
 
 const App = () => {
-  // save clicks of each button to its own state
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
@@ -24,13 +23,13 @@ const App = () => {
   return (
     <div>
       <Header heading={heading1} />
-      <Button
+      <Buttons
         categories={["good", "neutral", "bad"]}
         setters={categorySetters}
         voteCounter={voteCounter}
       />
       <Header heading={heading2} />
-      <Statistic
+      <Statistics
         categories={categoryProps}
         names={["good", "neutral", "bad", "all"]}
         totalVotes={totalVotes}

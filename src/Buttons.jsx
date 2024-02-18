@@ -1,4 +1,4 @@
-export const Button = ({ categories, setters, voteCounter }) => {
+export const Buttons = ({ categories, setters, voteCounter }) => {
   return (
     <>
       {categories.map((button, index) => {

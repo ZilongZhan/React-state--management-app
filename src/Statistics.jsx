@@ -1,4 +1,4 @@
-export const Statistic = ({
+export const Statistics = ({
   categories,
   names,
   totalVotes,
