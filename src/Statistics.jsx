@@ -1,18 +1,13 @@
-export const Statistics = ({
-  props,
-  totalVotes,
-  averageScore,
-  positivePercentage,
-}) => {
+export const Statistics = ({ props, advancedStats }) => {
   return (
     <table>
       <tbody>
         {props.map((category) => (
           <tr key={category.name}>{`${category.name} ${category.state}`}</tr>
         ))}
-        <tr>all {totalVotes()}</tr>
-        <tr>average {averageScore()}</tr>
-        <tr>positive {positivePercentage()} %</tr>
+        {advancedStats.map((stat) => (
+          <tr key={stat.label}>{`${stat.label} ${stat.function()}`}</tr>
+        ))}
       </tbody>
     </table>
   );
